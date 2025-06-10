@@ -1,0 +1,60 @@
+.navbar,
+.nav-holder {
+  height: 90px;
+}
+
+.nav-holder {
+  background-color: blueviolet;
+}
+.logo-sec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-sec > a {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+}
+.logo-img {
+  object-fit: contain;
+  height: 60px;
+  width: 100%;
+  scale: 2.75;
+}
+
+.link-sec a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0 10px;
+  margin: 0;
+}
+.menu-sec > a {
+  box-sizing: border-box;
+  width: fit-content;
+  padding: 0 !important;
+  height: 48px !important;
+  text-decoration: none;
+  translate: -30px 0;
+}
+.menu-sec > a > i,
+.menu-sec > a > i::before {
+  display: block;
+  padding: 0 !important;
+  font-size: 48px;
+  color: white;
+  height: 48px !important;
+}
+.menu-sec > a > i::before {
+  scale: 1.4;
+}
+
+.test {
+  background-color: aquamarine;
+  height: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
