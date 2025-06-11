@@ -1,14 +1,16 @@
-<nav class="navbar fixed-top bg-dark">
+<!-- Navbar Component -->
+<div class="navbar fixed-top">
+  <!-- Navbar Content -->
   <div class="container row">
-    <div
-      class="logo-sec col-5 col-md-3 mx-auto"
-    >
+    <!-- Logo -->
+    <div class="logo-sec col-6 col-md-3 mx-auto">
       <a href="#">
         <img class="logo-img" src="/assets/logos/logo.png" alt="Logo" />
       </a>
     </div>
+    <!-- Links' List -->
     <div
-      class="link-sec d-none d-md-flex col-9 mx-auto row row-cols-6 align-items-center justify-content-center"
+      class="link-sec d-none d-md-flex col-9 mx-auto row align-items-center justify-content-evenly"
     >
       <div class="col text-center">
         <a class="" href="#">Home</a>
@@ -23,18 +25,62 @@
         <a class="" href="#">Orders</a>
       </div>
       <div class="col text-center">
-        <a class="" href="#">Profile</a>
-      </div>
-      <div class="col text-center">
         <a class="" href="#">Logout</a>
       </div>
     </div>
-    <div class="menu-sec d-flex d-md-none row col-7 justify-content-end">
-      <a class="text-white mr-2" href="#"><i class="bi bi-list"></i></a>
+    <!-- Off-Canvas Menu -->
+    <div class="menu-sec d-flex d-md-none row col-6 justify-content-end">
+      <!-- Off-Canvas Menu Toggle -->
+      <a
+        class="navbar-toggler text-white mr-2"
+        data-bs-toggle="offcanvas"
+        href="#offcanvasNavbar"
+        role="button"
+        aria-controls="offcanvasNavbar"
+        ><i class="bi bi-list"></i
+      ></a>
+      <!-- Off-Canvas Menu Body -->
+      <div
+        class="offcanvas offcanvas-start p-0"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
+        <div class="offcanvas-header">
+          <div class="logo-sec col-8">
+            <a href="#">
+              <img class="logo-img" src="/assets/logos/logo.png" alt="Logo" />
+            </a>
+          </div>
+          <button
+            _ngcontent-ng-c2789213032=""
+            type="button"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+            class="btn-close btn-close-black shadow-none"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="offcanvas-links text-white">
+            <ul>
+              <li><a class="" href="#">Home</a></li>
+              <li><a class="" href="#">Products</a></li>
+              <li><a class="" href="#">Cart</a></li>
+              <li><a class="" href="#">Orders</a></li>
+              <li><a class="" href="#">Profile</a></li>
+              <hr />
+              <li><a class="" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</nav>
+</div>
 
+<!-- A holding space for Navbar -->
 <div class="nav-holder"></div>
 
-<div class="test"></div>
+<!-- A div to test scrolling -->
+<div class="test bg-art-one"></div>
+<div class="test bg-no-art-one"></div>
