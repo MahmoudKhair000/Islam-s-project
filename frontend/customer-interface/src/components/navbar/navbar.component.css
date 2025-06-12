@@ -5,12 +5,10 @@
   border-bottom: 1px solid var(--txt-one);
   /* padding: 0; */
 }
-
 .nav-holder {
   color: var(--txt-one);
   background-color: var(--txt-two);
 }
-
 .navbar .container {
   display: flex;
   align-items: center;
@@ -80,7 +78,7 @@
   min-width: 50%;
 }
 .offcanvas .offcanvas-header .btn-close {
-    margin-right: 0;
+  margin-right: 0;
 }
 .offcanvas .offcanvas-header {
   height: 90px;
@@ -103,7 +101,7 @@
   padding: 0;
   margin: 0 auto;
 }
-.offcanvas-links ul > hr {
+.offcanvas-links ul hr {
   width: 100%;
   height: 4px;
   background-color: var(--navy);

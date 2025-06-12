@@ -8,10 +8,6 @@ footer {
 footer .footer-content > div {
   display: flex;
 }
-footer .footer-content > div > div {
-  /* width: fit-content; */
-  margin-bottom: 40px;
-}
 
 footer .link-list {
   width: fit-content;
@@ -19,28 +15,41 @@ footer .link-list {
   display: flex;
   flex-direction: column;
   /* gap: 8px; */
-  padding-left: 10px;
+  padding-inline-start: 20px;
 }
 footer .link-list hr {
   opacity: 0.9;
   width: 130%;
-  transform: translateX(-10%);
   background-color: var(--navy);
   height: 2px;
   margin: 5px 0;
   border: none;
   border-radius: 1px;
 }
+footer .link-list li {
+  margin-bottom: 5px;
+}
+footer .link-list a:hover {
+  background-color: var(--bg-two);
+  color: var(--txt-two);
+  transition: var(--transition-one);
+}
 footer .link-list a {
+  padding: 2px 5px;
+  border-radius: 5px;
   text-decoration: none;
   color: var(--txt-one);
+  text-align: center;
+  margin: 0;
 }
 footer .contact-info {
   width: fit-content;
+  padding-inline-start: 20px;
 }
 footer .contact-info > div {
   gap: 25px;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 footer .footer-content h2 {
   font-family: "Roboto";
@@ -67,12 +76,14 @@ footer .social-icons a {
   display: flex;
 }
 footer .social-icons a > i {
-  color: #036b;
+  color: #003366c5;
   font-size: 2rem;
 }
 footer .social-icons a > i:hover {
-  color: #036;
+  color: var(--txt-one);
 }
 footer .foot-note {
   width: 100%;
+  background-color: var(--bg-two);
+  color: var(--txt-two);
 }

@@ -10,7 +10,7 @@
     </div>
     <!-- Links' List -->
     <div
-      class="link-sec d-none d-md-flex col-9 mx-auto row align-items-center justify-content-evenly"
+      class="link-sec d-none d-lg-flex col-9 mx-auto row align-items-center justify-content-evenly"
     >
       <div class="col text-center">
         <a class="" href="#">Home</a>
@@ -29,7 +29,7 @@
       </div>
     </div>
     <!-- Off-Canvas Menu -->
-    <div class="menu-sec d-flex d-md-none row col-6 justify-content-end">
+    <div class="menu-sec d-flex d-lg-none row col-6 justify-content-end">
       <!-- Off-Canvas Menu Toggle -->
       <a
         class="navbar-toggler text-white mr-2"
@@ -53,7 +53,6 @@
             </a>
           </div>
           <button
-            _ngcontent-ng-c2789213032=""
             type="button"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
@@ -63,13 +62,53 @@
         <div class="offcanvas-body">
           <div class="offcanvas-links text-white">
             <ul>
-              <li><a class="" href="#">Home</a></li>
-              <li><a class="" href="#">Products</a></li>
-              <li><a class="" href="#">Cart</a></li>
-              <li><a class="" href="#">Orders</a></li>
-              <li><a class="" href="#">Profile</a></li>
-              <hr />
-              <li><a class="" href="#">Logout</a></li>
+              <li>
+                <a
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                  class=""
+                  routerLink="/"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                  class=""
+                  routerLink="/explore"
+                  >Explore</a
+                >
+              </li>
+              <li>
+                <a
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                  class=""
+                  routerLink="/"
+                  >Cart</a
+                >
+              </li>
+              <li>
+                <a
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                  class=""
+                  routerLink="/"
+                  >Orders</a
+                >
+              </li>
+              <li>
+                <a
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                  class=""
+                  routerLink="/"
+                  >Profile</a
+                >
+              </li>
+              <li><hr /></li>
+              <li><a class="sign-btn" routerLink="/">Logout</a></li>
             </ul>
           </div>
         </div>
@@ -80,7 +119,3 @@
 
 <!-- A holding space for Navbar -->
 <div class="nav-holder"></div>
-
-<!-- A div to test scrolling -->
-<div class="test bg-art-one"></div>
-<div class="test bg-no-art-one"></div>

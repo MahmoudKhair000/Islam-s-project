@@ -7,16 +7,16 @@
 }
 /* Track of the scrollbar */
 *::-webkit-scrollbar-track {
-    background-color: #f5f5f5;
-    border-left: 1px solid var(--txt-one);
+  background-color: #f5f5f5;
+  border-left: 1px solid var(--txt-one);
 }
 *::-webkit-scrollbar-track:hover {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
 /* Handle of the scrollbar */
 *::-webkit-scrollbar-thumb {
-    border-radius: 2px;
+  border-radius: 2px;
   background-color: #036b;
   border: 0.3px solid #036;
 }
@@ -99,11 +99,13 @@ body {
   background-color: var(--bg-one);
   color: var(--txt-one);
   border-top: 1px solid var(--txt-one);
+  background-image: var(--gradient-one);
 }
 .bg-no-art-two {
-  background-color: var(--bg-two);
+  background-color: #000000;
   color: var(--txt-two);
-  border-top: 1px solid var(--txt-two);
+  border-top: 1px solid #000000;
+  background-image: var(--gradient-two), var(--pattern-two);
 }
 
 .bg-art-one {
@@ -119,6 +121,61 @@ body {
   background-image: var(--gradient-two), var(--pattern-two);
   background-repeat: repeat;
   background-position: initial;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(
+    to right,
+    #bf953f,
+    #fcf6ba,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+}
+
+/* Gold Gradient Example */
+.gold-gradient{
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid #c4a456;
+  border-radius: 8px;
+}
+.gold-gradient:hover {
+  background: radial-gradient(
+    ellipse farthest-corner at right bottom,
+      #fedb37 0%,
+      #fdb931 8%,
+      #9f7928 40%,
+      #8a6e2f 60%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      #ffffac 8%,
+      #d1b464 25%,
+      #5d4a1f 64%,
+      #5d4a1f 100%
+    );
+}
+.gold-gradient:hover .gold-gradient-text{color: var(--txt-two);}
+
+/* Optional Animation for a Shimmer Effect */
+/* @keyframes gradient-shift {
+  0%   {top: 0px;}
+  25%  {top: 200px;}
+  50%  {top: 100px;}
+  75%  {top: 200px;}
+  100% {top: 0px;}
+} */
+
+.sign-btn {
+  border: 1.5px solid var(--txt-one);
 }
 
 /* Test section */
