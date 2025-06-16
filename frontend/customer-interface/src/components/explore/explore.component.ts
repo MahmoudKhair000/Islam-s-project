@@ -122,6 +122,8 @@ export class ExploreComponent {
   selectedType: string = '';
   selectedLocation: string = '';
   selectedGender: string = '';
+  selectedNoBeds: number = 0;
+  selectedNoRooms: number = 0;
   selectedMinPrice: number = 0;
   selectedMaxPrice: number = this.priceRange.max;
 
@@ -152,12 +154,12 @@ export class ExploreComponent {
   viewedResults: any[] = [];
   viewResults(start: number) {
     this.pages = [];
-    
+
     this.totalPages = Math.ceil(this.filteredEstates.length / this.onePageResults);
     for (let i = 1; i < this.totalPages + 1; i++) {
       this.pages.push(`${i}`);
     };
-    
+
     this.viewedResults = [];
     this.filterEstates();
     for (let i = ((start - 1) * 6); i < ((start - 1) * 6) + 6; i++) {

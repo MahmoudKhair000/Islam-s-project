@@ -1,6 +1,4 @@
-.filter .row {
-  height: max-content;
-}
+.filter .row input[type="number"],
 .filter .row input[type="text"] {
   width: 100%;
   padding: 0.5rem;
