@@ -1,0 +1,21 @@
+.landing {
+  height: calc(100vh - 90px);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.8) 20%,
+      rgba(0, 0, 0, 0.15) 100%
+    ),
+    url("/assets/images/landing.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.landing .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    padding: 0 calc(200px - 10rem);
+}

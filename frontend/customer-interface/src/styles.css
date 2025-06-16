@@ -104,11 +104,11 @@ body {
 .bg-no-art-two {
   background-color: #000000;
   color: var(--txt-two);
-  border-top: 1px solid #000000;
+  border-top: 2px solid #c4a456;
   background-image: var(--gradient-two), var(--pattern-two);
 }
-
 .bg-art-one {
+  border-top: 1px solid var(--txt-one);
   background-color: var(--bg-one);
   color: var(--txt-one);
   background-image: var(--gradient-one), var(--pattern-one);
@@ -119,6 +119,7 @@ body {
   background-color: #000000;
   color: var(--bg-one);
   background-image: var(--gradient-two), var(--pattern-two);
+  border-top: 2px solid #c4a456;
   background-repeat: repeat;
   background-position: initial;
 }
@@ -133,49 +134,70 @@ body {
     #aa771c
   );
   -webkit-background-clip: text;
+  text-transform: capitalize;
   background-clip: text;
+  font-weight: 400;
   color: transparent;
-
 }
-
+.gold-gradient:hover .gold-gradient-text {
+  color: #111;
+}
 /* Gold Gradient Example */
-.gold-gradient{
-  padding: 10px;
+.gold-gradient {
   background-color: transparent;
+  background-image: radial-gradient(#000000ff 5%, #00000077 75%);
   border: 1px solid #c4a456;
   border-radius: 8px;
 }
 .gold-gradient:hover {
-  background: radial-gradient(
-    ellipse farthest-corner at right bottom,
-      #fedb37 0%,
-      #fdb931 8%,
-      #9f7928 40%,
-      #8a6e2f 60%,
-      transparent 80%
-    ),
-    radial-gradient(
-      ellipse farthest-corner at left top,
-      #ffffff 0%,
-      #ffffac 8%,
-      #d1b464 25%,
-      #5d4a1f 64%,
-      #5d4a1f 100%
-    );
+  background-origin: content-box;
+  background: linear-gradient(
+    100deg,
+    #bf953f 5%,
+    #ffef94 20%,
+    #aa771c 40%,
+    #b98b2e 50%,
+    #f8e5a8 65%,
+    #bf953f 90%
+  );
+  animation: gradient-shift 2s infinite ease-in-out alternate;
+  border: none;
+  background-clip: border-box;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  background-size: 220%;
 }
-.gold-gradient:hover .gold-gradient-text{color: var(--txt-two);}
-
 /* Optional Animation for a Shimmer Effect */
-/* @keyframes gradient-shift {
-  0%   {top: 0px;}
-  25%  {top: 200px;}
-  50%  {top: 100px;}
-  75%  {top: 200px;}
-  100% {top: 0px;}
-} */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
 
 .sign-btn {
-  border: 1.5px solid var(--txt-one);
+  border: 1px solid var(--txt-one);
+}
+.border-navy{
+  border: 1px solid var(--txt-one) !important;
+}
+.btn-navy{
+  text-decoration: none;
+  color: var(--txt-one);
+  background-color: var(--bg-one);
+  border: 1px solid var(--bg-two);
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+.btn-navy:hover {
+  border: 1px solid var(--bg-two);
+  background-color: var(--bg-two);
+  color: var(--txt-two);
 }
 
 /* Test section */

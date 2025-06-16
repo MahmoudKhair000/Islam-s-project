@@ -1,14 +1,178 @@
 <app-navbar></app-navbar>
-<p>explore works!</p>
+<!-- Navbar -->
+
+<div class="bg-no-art-one">
+  <div class="container">
+    <div class="filter my-4">
+      <div class="row w-100 justify-content-between">
+        <div class="col-6 col-lg-4 my-2">
+          <input
+            class="w-100 p-2 rounded-2"
+            type="text"
+            placeholder="Search Real Estates..."
+            [(ngModel)]="searchTerm"
+            (ngModelChange)="viewResults(1)"
+          />
+        </div>
+
+        <div class="col-6 col-lg-4 my-2">
+          <select
+            class="form-select"
+            [(ngModel)]="selectedGender"
+            (ngModelChange)="viewResults(1)"
+          >
+            <option value="">Select Gender...</option>
+            <option *ngFor="let gender of genderOptions" [value]="gender">
+              {{ gender }}
+            </option>
+          </select>
+        </div>
+
+        <div class="col-6 col-lg-4 my-2">
+          <select
+            class="form-select"
+            [(ngModel)]="selectedLocation"
+            (ngModelChange)="viewResults(1)"
+          >
+            <option value="" default>Selected Locations...</option>
+            <option *ngFor="let location of locationOptions" [value]="location">
+              {{ location }}
+            </option>
+          </select>
+        </div>
+
+        <div class="col-6 col-lg-4 my-2">
+          <select
+            class="form-select"
+            [(ngModel)]="selectedType"
+            (ngModelChange)="viewResults(1)"
+          >
+            <option value="">Select Types...</option>
+            <option *ngFor="let type of estateTypes" [value]="type">
+              {{ type }}
+            </option>
+          </select>
+        </div>
+
+        <div class="col-4 col-lg-3 my-2">
+          <button class="btn-navy w-100 p-2 rounded-2" (click)="viewResults(1)">
+            <i class="bi bi-search"></i> Search
+          </button>
+        </div>
+      </div>
+
+      <div class="w-100 px-3">
+        <div class="border-navy rounded row">
+          <div class="col-12 col-lg-6 p-2 align-items-center">
+            <div class="row w-100 w-lg-50 justify-content-between align-items-center">
+              <span class="pe-2 mb-0 col-2">Min Price:</span>
+              <input
+                type="range"
+                class="form-range"
+                [min]="priceRange.min"
+                [max]="selectedMaxPrice"
+                step="100"
+                [(ngModel)]="selectedMinPrice"
+                (ngModelChange)="viewResults(1)"
+              />
+              <span class="ps-2 col-2">{{ selectedMinPrice | currency }}</span>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 p-2 align-items-center">
+            <div class="row w-100 w-lg-50 justify-content-between align-items-center">
+              <span class="col-2 pe-2 mb-0">Max Price:</span>
+              <input
+                type="range"
+                class="form-range"
+                [min]="selectedMinPrice"
+                [max]="priceRange.max"
+                step="100"
+                [(ngModel)]="selectedMaxPrice"
+                (ngModelChange)="viewResults(1)"
+              />
+              <span class="col-2 ps-2">{{ selectedMaxPrice | currency }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-art-one">
+  <div class="container">
+    <div
+      class="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 py-5 d-flex justify-content-evenly align-items-center"
+    >
+      @for (estate of viewedResults; track $index) {
+        @if (estate == undefined) {
+          <div class="d-block"></div>
+        } @else{
+          <div class="col p-3">
+            <div class="apt-card d-flex flex-lg-column justify-content-center">
+              <div class="img-sec w-lg-100">
+                <div class="badge">for {{ estate.type }}</div>
+                <img
+                  class="img-fluid w-lg-100"
+                  src="assets/images/estate.jpg"
+                  alt="{{ estate.name }}"
+                />
+              </div>
+              <div class="det-sec w-lg-100 p-4 p-lg-4 h-100">
+                <h4 class="card-title mb-1">{{ estate.name }}</h4>
+                <h6 class="card-text mb-3">
+                  <i class="bi bi-geo-alt"></i> {{ estate.location }}
+                </h6>
+                <h5 class="card-text my-2">
+                  Price: {{ estate.price | currency }} /<span class="fs-6">{{
+                    estate.duration
+                  }}</span>
+                </h5>
+                <p class="card-text mb-3">
+                  {{ estate.description }}
+                </p>
+                <button
+                  class="btn-navy rounded-2 py-2 px-3 my-2"
+                  [routerLink]="['/service', estate.name]"
+                >
+                  See Details &nbsp;
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        }
+      }
+      <div class="pagination">
+        <div class="row gap-3">
+          @for (page of pages; track $index) {
+          <a
+            class="p-3 col text-decoration-none rounded-3 border-navy"
+            [ngClass]="{ current: page == curruntPage }"
+            (click)="viewResults(page)"
+          >
+            {{ page }}
+          </a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- A div to test scrolling -->
-<div class="test bg-art-one"></div>
 <div
-  id="trial"
   class="test bg-no-art-two d-flex flex-column justify-content-center align-items-center"
 >
-  <h3 class="gold-gradient-text">Golden Gradient Title</h3>
-  <button class="gold-gradient">
-    <span class="gold-gradient-text">Subscribe</span>
+  <h3 class="gold-gradient-text mb-3">Golden Gradient Title</h3>
+  <button class="gold-gradient p-3 rounded-3">
+    <span class="gold-gradient-text fs-5"
+      >Subscribe &nbsp;<i
+        class="bi bi-check-circle gold-gradient-text fs-5"
+      ></i>
+    </span>
   </button>
 </div>
+
+<!-- Footer -->
 <app-footer></app-footer>
